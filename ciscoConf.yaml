@@ -1,4 +1,4 @@
-- name: Run show commands on Cisco 2821 and 6800
+- name: Edit loopback
   hosts: all
   gather_facts: no
   connection: network_cli
