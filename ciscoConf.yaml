@@ -1,0 +1,18 @@
+- name: Run show commands on Cisco 2821 and 6800
+  hosts: all
+  gather_facts: no
+  connection: network_cli
+  collections:
+    - cisco.ios
+
+  vars:
+    ansible_network_os: ios
+    ansible_become: yes
+    ansible_become_method: enable
+
+  tasks:
+    - name: change loopback addr
+      ios_config:
+        lines:
+          - interface Loopback0
+          - ip address {{ loopback_ip }} 255.255.255.255
