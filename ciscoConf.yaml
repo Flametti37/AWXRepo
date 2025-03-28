@@ -9,6 +9,6 @@
     - name: change banner
       ios_config:
         lines:
-          - banner motd hello, welcome
+          - banner motd ^hello, welcome^
       become: yes
       become_method: enable
