@@ -1,4 +1,4 @@
-- name: Edit loopback
+- name: Edit banner
   hosts: all
   gather_facts: no
   connection: network_cli
@@ -6,10 +6,9 @@
     - cisco.ios
 
   tasks:
-    - name: change loopback addr
+    - name: change banner
       ios_config:
         lines:
-          - interface Loopback0
-          - ip address {{ loopback_ip }} 255.255.255.255
+          - banner motd hello, welcome
       become: yes
       become_method: enable
